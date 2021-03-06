@@ -59,6 +59,20 @@ func TestIchigo_ConvertSizeFormWeight(t *testing.T) {
 			},
 			want: "とちおとめ: S",
 		},
+		"品種に`とちおとめ`と重さgに`10g`を渡したときに`とちおとめ: M`が取得できる": {
+			args: args{
+				Variety: "とちおとめ",
+				Weight:  10,
+			},
+			want: "とちおとめ: M",
+		},
+		"品種に`とちおとめ`と重さgに`20g`を渡したときに`とちおとめ: L`が取得できる": {
+			args: args{
+				Variety: "とちおとめ",
+				Weight:  20,
+			},
+			want: "とちおとめ: L",
+		},
 	}
 	for tcName, tt := range testCases {
 		t.Run(tcName, func(t *testing.T) {
@@ -66,13 +80,4 @@ func TestIchigo_ConvertSizeFormWeight(t *testing.T) {
 			assert.Equal(t, tt.want, sut.String())
 		})
 	}
-
-	t.Run("品種に`とちおとめ`と重さgに`10g`を渡したときに`とちおとめ: M`が取得できる", func(t *testing.T) {
-		sut := NewWithVarietyAndWeight("とちおとめ", 10)
-		assert.Equal(t, "とちおとめ: M", sut.String())
-	})
-	t.Run("品種に`とちおとめ`と重さgに`20g`を渡したときに`とちおとめ: L`が取得できる", func(t *testing.T) {
-		sut := NewWithVarietyAndWeight("とちおとめ", 20)
-		assert.Equal(t, "とちおとめ: L", sut.String())
-	})
 }
