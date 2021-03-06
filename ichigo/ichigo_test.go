@@ -20,6 +20,14 @@ func TestIchigo_String(t *testing.T) {
 				args: args{Variety: "とちおとめ", Size: "L"},
 				want: "とちおとめ: L",
 			},
+			"品種に`あまおう`とサイズに`L`をわたしたときに`あまおう: L`が取得できる": {
+				args: args{Variety: "あまおう", Size: "L"},
+				want: "あまおう: L",
+			},
+			"品種に`もういっこ`とサイズに`L`をわたしたときに`もういっこ: L`が取得できる": {
+				args: args{Variety: "もういっこ", Size: "L"},
+				want: "もういっこ: L",
+			},
 		}
 		for tcName, tt := range tests {
 			t.Run(tcName, func(t *testing.T) {

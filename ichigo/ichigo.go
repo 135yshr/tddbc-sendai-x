@@ -14,7 +14,7 @@ func (c *Ichigo) String() string {
 
 // New - 品種とサイズからいちごを作成する
 func New(variety, size string) *Ichigo {
-	return &Ichigo{"とちおとめ", "L"}
+	return &Ichigo{variety, "L"}
 }
 
 // NewWithVarietyAndWeight - 品種と重さ(g)からいちごを作成する
