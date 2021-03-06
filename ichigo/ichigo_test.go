@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestIchigo(t *testing.T) {
+func TestIchigo_String(t *testing.T) {
 	tests := map[string]struct {
 		args Ichigo
 		want string
