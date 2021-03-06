@@ -19,6 +19,8 @@ func NewWithVarietyAndWeight(variety string, weight uint) *Ichigo {
 		return &Ichigo{Variety: variety, Size: "S"}
 	case weight < 20:
 		return &Ichigo{Variety: variety, Size: "M"}
+	case weight < 30:
+		return &Ichigo{Variety: variety, Size: "L"}
 	}
 	return &Ichigo{Variety: variety, Size: "S"}
 }
