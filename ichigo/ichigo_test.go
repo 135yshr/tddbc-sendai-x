@@ -44,6 +44,29 @@ func TestIchigo_String(t *testing.T) {
 }
 
 func TestIchigo_ConvertSizeFormWeight(t *testing.T) {
+	type args struct {
+		Variety string
+		Weight  uint
+	}
+	testCases := map[string]struct {
+		args args
+		want string
+	}{
+		"品種に`とちおとめ`と重さgに`8g`を渡したときに`とちおとめ: S`が取得できる": {
+			args: args{
+				Variety: "とちおとめ",
+				Weight:  8,
+			},
+			want: "とちおとめ: S",
+		},
+	}
+	for tcName, tt := range testCases {
+		t.Run(tcName, func(t *testing.T) {
+			sut := NewWithVarietyAndWeight(tt.args.Variety, tt.args.Weight)
+			assert.Equal(t, tt.want, sut.String())
+		})
+	}
+
 	t.Run("品種に`とちおとめ`と重さgに`8g`を渡したときに`とちおとめ: S`が取得できる", func(t *testing.T) {
 		sut := NewWithVarietyAndWeight("とちおとめ", 8)
 		assert.Equal(t, "とちおとめ: S", sut.String())
