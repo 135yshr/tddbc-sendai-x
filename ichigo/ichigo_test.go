@@ -73,6 +73,13 @@ func TestIchigo_ConvertSizeFormWeight(t *testing.T) {
 			},
 			want: "とちおとめ: L",
 		},
+		"品種に`とちおとめ`と重さgに`25g`を渡したときに`とちおとめ: LL`が取得できる": {
+			args: args{
+				Variety: "とちおとめ",
+				Weight:  25,
+			},
+			want: "とちおとめ: LL",
+		},
 	}
 	for tcName, tt := range testCases {
 		t.Run(tcName, func(t *testing.T) {
