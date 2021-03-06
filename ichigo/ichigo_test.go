@@ -49,7 +49,7 @@ func TestIchigo_ConvertSizeFormWeight(t *testing.T) {
 		assert.Equal(t, "とちおとめ: S", sut.String())
 	})
 	t.Run("品種に`とちおとめ`と重さgに`10g`を渡したときに`とちおとめ: M`が取得できる", func(t *testing.T) {
-		sut := NewWithVarietyAndWeight("とちおとめ", 8)
+		sut := NewWithVarietyAndWeight("とちおとめ", 10)
 		assert.Equal(t, "とちおとめ: M", sut.String())
 	})
 }

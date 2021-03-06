@@ -14,5 +14,11 @@ func (c *Ichigo) String() string {
 
 // NewWithVarietyAndWeight - 品種と重さ(g)からいちごを作成する
 func NewWithVarietyAndWeight(variety string, weight uint) *Ichigo {
+	switch {
+	case weight < 10:
+		return &Ichigo{Variety: variety, Size: "S"}
+	case weight < 20:
+		return &Ichigo{Variety: variety, Size: "M"}
+	}
 	return &Ichigo{Variety: variety, Size: "S"}
 }
