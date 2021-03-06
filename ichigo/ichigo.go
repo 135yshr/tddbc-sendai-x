@@ -6,5 +6,5 @@ type Ichigo struct {
 }
 
 func (c *Ichigo) String() string {
-	return "さちおとめ: L"
+	return "とちおとめ: L"
 }
