@@ -7,6 +7,27 @@ import (
 )
 
 func TestIchigo_String(t *testing.T) {
+	{
+		type args struct {
+			Variety string
+			Size    string
+		}
+		tests := map[string]struct {
+			args args
+			want string
+		}{
+			"品種に`とちおとめ`とサイズに`L`をわたしたときに`とちおとめ: L`が取得できる": {
+				args: args{Variety: "とちおとめ", Size: "L"},
+				want: "とちおとめ: L",
+			},
+		}
+		for tcName, tt := range tests {
+			t.Run(tcName, func(t *testing.T) {
+				sut := New(tt.args.Variety, tt.args.Size)
+				assert.Equal(t, tt.want, sut.String())
+			})
+		}
+	}
 	tests := map[string]struct {
 		args Ichigo
 		want string

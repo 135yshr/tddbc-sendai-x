@@ -12,6 +12,11 @@ func (c *Ichigo) String() string {
 	return fmt.Sprintf("%s: %s", c.Variety, c.Size)
 }
 
+// New - 品種とサイズからいちごを作成する
+func New(variety, size string) *Ichigo {
+	return &Ichigo{"とちおとめ", "L"}
+}
+
 // NewWithVarietyAndWeight - 品種と重さ(g)からいちごを作成する
 func NewWithVarietyAndWeight(variety string, weight uint) *Ichigo {
 	switch {
