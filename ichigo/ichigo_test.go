@@ -15,16 +15,16 @@ func TestIchigo(t *testing.T) {
 			args: Ichigo{Name: "とちおとめ", Size: "L"},
 			want: "とちおとめ: L",
 		},
+		"品種にあまおうとサイズにLをわたしたときに`あまおう: L`が取得できる": {
+			args: Ichigo{Name: "あまおう", Size: "L"},
+			want: "あまおう: L",
+		},
 	}
 	for tcName, tt := range tests {
 		t.Run(tcName, func(t *testing.T) {
-			assert.Equal(t, "とちおとめ: L", tt.args.String())
+			assert.Equal(t, tt.want, tt.args.String())
 		})
 	}
-	t.Run("品種にとちおとめとサイズにLをわたしたときに`とちおとめ: L`が取得できること", func(t *testing.T) {
-		sut := Ichigo{Name: "とちおとめ", Size: "L"}
-		assert.Equal(t, "とちおとめ: L", sut.String())
-	})
 
 	t.Run("品種にあまおうとサイズにLをわたしたときに`あまおう: L`が取得できること", func(t *testing.T) {
 		sut := Ichigo{Name: "あまおう", Size: "L"}
