@@ -3,10 +3,10 @@ package ichigo
 import "fmt"
 
 type Ichigo struct {
-	Name string
-	Size string
+	Variety string
+	Size    string
 }
 
 func (c *Ichigo) String() string {
-	return fmt.Sprintf("%s: %s", c.Name, c.Size)
+	return fmt.Sprintf("%s: %s", c.Variety, c.Size)
 }
