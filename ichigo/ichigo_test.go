@@ -27,13 +27,13 @@ func TestIchigo(t *testing.T) {
 			args: Ichigo{Variety: "とちおとめ", Size: "S"},
 			want: "とちおとめ: S",
 		},
-		"品種にあまおうとサイズにMをわたしたときに`あまおう: M`が取得できる": {
-			args: Ichigo{Variety: "あまおう", Size: "M"},
-			want: "あまおう: M",
+		"品種にとちおとめとサイズにMをわたしたときに`とちおとめ: M`が取得できる": {
+			args: Ichigo{Variety: "とちおとめ", Size: "M"},
+			want: "とちおとめ: M",
 		},
-		"品種にもういっことサイズにLLをわたしたときに`もういっこ: LL`が取得できる": {
-			args: Ichigo{Variety: "もういっこ", Size: "LL"},
-			want: "もういっこ: LL",
+		"品種にとちおとめとサイズにLLをわたしたときに`とちおとめ: LL`が取得できる": {
+			args: Ichigo{Variety: "とちおとめ", Size: "LL"},
+			want: "とちおとめ: LL",
 		},
 	}
 	for tcName, tt := range tests {
