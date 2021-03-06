@@ -7,79 +7,44 @@ import (
 )
 
 func TestIchigo_String(t *testing.T) {
-	{
-		type args struct {
-			Variety string
-			Size    string
-		}
-		tests := map[string]struct {
-			args args
-			want string
-		}{
-			"品種に`とちおとめ`とサイズに`L`をわたしたときに`とちおとめ: L`が取得できる": {
-				args: args{Variety: "とちおとめ", Size: "L"},
-				want: "とちおとめ: L",
-			},
-			"品種に`あまおう`とサイズに`L`をわたしたときに`あまおう: L`が取得できる": {
-				args: args{Variety: "あまおう", Size: "L"},
-				want: "あまおう: L",
-			},
-			"品種に`もういっこ`とサイズに`L`をわたしたときに`もういっこ: L`が取得できる": {
-				args: args{Variety: "もういっこ", Size: "L"},
-				want: "もういっこ: L",
-			},
-			"品種に`とちおとめ`とサイズに`S`をわたしたときに`とちおとめ: S`が取得できる": {
-				args: args{Variety: "とちおとめ", Size: "S"},
-				want: "とちおとめ: S",
-			},
-			"品種に`とちおとめ`とサイズに`M`をわたしたときに`とちおとめ: M`が取得できる": {
-				args: args{Variety: "とちおとめ", Size: "M"},
-				want: "とちおとめ: M",
-			},
-			"品種に`とちおとめ`とサイズに`LL`をわたしたときに`とちおとめ: LL`が取得できる": {
-				args: args{Variety: "とちおとめ", Size: "LL"},
-				want: "とちおとめ: LL",
-			},
-		}
-		for tcName, tt := range tests {
-			t.Run(tcName, func(t *testing.T) {
-				sut := New(tt.args.Variety, tt.args.Size)
-				assert.Equal(t, tt.want, sut.String())
-			})
-		}
+
+	type args struct {
+		Variety string
+		Size    string
 	}
 	tests := map[string]struct {
-		args Ichigo
+		args args
 		want string
 	}{
 		"品種に`とちおとめ`とサイズに`L`をわたしたときに`とちおとめ: L`が取得できる": {
-			args: Ichigo{Variety: "とちおとめ", Size: "L"},
+			args: args{Variety: "とちおとめ", Size: "L"},
 			want: "とちおとめ: L",
 		},
 		"品種に`あまおう`とサイズに`L`をわたしたときに`あまおう: L`が取得できる": {
-			args: Ichigo{Variety: "あまおう", Size: "L"},
+			args: args{Variety: "あまおう", Size: "L"},
 			want: "あまおう: L",
 		},
 		"品種に`もういっこ`とサイズに`L`をわたしたときに`もういっこ: L`が取得できる": {
-			args: Ichigo{Variety: "もういっこ", Size: "L"},
+			args: args{Variety: "もういっこ", Size: "L"},
 			want: "もういっこ: L",
 		},
 		"品種に`とちおとめ`とサイズに`S`をわたしたときに`とちおとめ: S`が取得できる": {
-			args: Ichigo{Variety: "とちおとめ", Size: "S"},
+			args: args{Variety: "とちおとめ", Size: "S"},
 			want: "とちおとめ: S",
 		},
 		"品種に`とちおとめ`とサイズに`M`をわたしたときに`とちおとめ: M`が取得できる": {
-			args: Ichigo{Variety: "とちおとめ", Size: "M"},
+			args: args{Variety: "とちおとめ", Size: "M"},
 			want: "とちおとめ: M",
 		},
 		"品種に`とちおとめ`とサイズに`LL`をわたしたときに`とちおとめ: LL`が取得できる": {
-			args: Ichigo{Variety: "とちおとめ", Size: "LL"},
+			args: args{Variety: "とちおとめ", Size: "LL"},
 			want: "とちおとめ: LL",
 		},
 	}
 	for tcName, tt := range tests {
 		t.Run(tcName, func(t *testing.T) {
-			assert.Equal(t, tt.want, tt.args.String())
+			sut := New(tt.args.Variety, tt.args.Size)
+			assert.Equal(t, tt.want, sut.String())
 		})
 	}
 }
